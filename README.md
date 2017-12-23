@@ -5,6 +5,27 @@ This is going to be a guide on how to get started with [zsh](https://en.wikipedi
 ### Rationale
 There are projects available such as [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), [prezto](https://github.com/sorin-ionescu/prezto), and [antigen](https://github.com/zsh-users/antigen), which are highly convenient and already offer a myriad of plugins and knobs to facilitate setting up zsh after you have experience. This project is not meant to be a replacement for those, but rather, something that will aid new zsh users in understanding the basics, so that they can know to choose whether they will want to roll out their own config or whether they're going to use a framework.
 
+## The Prompt
+
+If you've just installed zsh, you have been received by this welcoming prompt:
+```
+hostname% █
+```
+
+Where `hostname` is the name of your machine. Not very pretty or informative, is it?
+
+There are two ways to customize your shell prompt; the first and most widely compatible way is to set the variables `PS1`, `PS2`, `PS3` and `PS4` in your `~/.profile`, like so:
+```
+export PS1="$(hostname) ; "
+export PS2='➘ '
+export PS3='\ '
+export PS4='| '
+```
+
+PSx variables are part of the POSIX standard and will work in bash, zsh and many other shells. `man bash` and look for the `PROMPTING` section for more info.
+
+TODO: the second way, using `PROMPT`.
+
 ## Pasting URLs in zsh sometimes causes weird errors
 
 Ever had this happen to you?
