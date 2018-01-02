@@ -85,13 +85,13 @@ source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 
 ## TAB Completions
 
+Zsh comes with no special completions besides completing filenames when you press TAB. With [zsh-completions](https://github.com/zsh-users/zsh-completions) you can make it learn new completions:
 ```
-# autocompletion by zsh-completions (installed via pacaur -S zsh-completions)
 fpath=(
   /usr/share/zsh/site-functions
   $fpath
 )
-# had to include this
+# had to include this, TODO dunno why
 autoload -Uz compinit
 compinit
 ```
