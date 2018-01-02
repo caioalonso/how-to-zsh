@@ -82,3 +82,16 @@ source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 ```
+
+## TAB Completions
+
+```
+# autocompletion by zsh-completions (installed via pacaur -S zsh-completions)
+fpath=(
+  /usr/share/zsh/site-functions
+  $fpath
+)
+# had to include this
+autoload -Uz compinit
+compinit
+```
